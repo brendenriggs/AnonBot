@@ -11,11 +11,11 @@ bot_name = "BOT NAME HERE"
 channel_id = "CHANNEL ID HERE"
 
 
-@bot.message_handler(commands=['start', 'help', 'SayHi'])
+@bot.message_handler(commands=['start'])
 def send_welcome(message):
 	bot.reply_to(message, f"Hey there! Send me a message and I'll forward it as an anonymous message to the {channel_id} channel!")
 
-@bot.message_handler(commands=['start', 'help', 'SayHi'])
+@bot.message_handler(commands=['help', 'SayHi'])
 def forward_message(message):
 	bot.send_message(channel_id, f"Howdy! I'm {bot_name}! Click my name and send me a private message and I'll forward it as an anonymous message to this channel! Don't abuse me please!")
 
